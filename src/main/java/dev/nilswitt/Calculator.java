@@ -10,6 +10,12 @@ public class Calculator {
         switch (operator){
             case ("+"):
                 return x + y;
+            case ("-"):
+                return x - y;
+            case ("*"):
+                return x * y;
+            case ("/"):
+                return x / y;
             default:
                 return 0;
         }
