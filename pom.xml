@@ -14,7 +14,6 @@
     </properties>
 
 
-
     <dependencies>
         <dependency>
             <groupId>org.junit.jupiter</groupId>
@@ -46,6 +45,30 @@
                     <target>14</target>
                 </configuration>
             </plugin>
+            <plugin>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <finalName>Unit-Test</finalName>
+                    <appendAssemblyId>true</appendAssemblyId>
+                    <archive>
+                        <manifest>
+                            <mainClass>dev.nilswitt.Calculator</mainClass>
+                        </manifest>
+                    </archive>
+                    <descriptors>
+                        <descriptor>src/assembly/jar.xml</descriptor>
+                    </descriptors>
+                </configuration>
+            </plugin>
         </plugins>
+
     </build>
 </project>
